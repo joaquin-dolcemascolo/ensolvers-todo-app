@@ -1,0 +1,20 @@
+<div class="container flex">
+    <h1>To-Do App</h1>
+    <form class="box flex" [formGroup]="loginForm">
+
+        <div class="input flex" (click)="userInput.focus()">
+            <mat-icon>person</mat-icon>
+            <input #userInput formControlName="username" required autofocus>
+        </div>
+
+        <div class="input flex" (click)="passwordInput.focus()">
+            <mat-icon>lock</mat-icon>
+            <input [type]="hide ? 'password' : 'text'" #passwordInput formControlName="password" required>
+            <mat-icon (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </div>
+
+        <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="loginForm.invalid">INICIAR
+            SESIÓN</button>
+
+    </form>
+</div>

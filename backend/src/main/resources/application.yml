@@ -1,0 +1,35 @@
+app:
+  name: todo-app
+
+jwt:
+  header: Authorization
+  expires_in: 86400
+  secret: queenvictoria
+  cookie: AUTH-TOKEN
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true
+        formatSql: true
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+  
+  datasource:
+    hikari:
+      auto-commit: false
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/todo-app
+    username: postgres
+    password: 1234
+    driverClassName: org.postgresql.Driver

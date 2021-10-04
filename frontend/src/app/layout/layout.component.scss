@@ -1,0 +1,40 @@
+.toolbar {
+    height: 56px;
+    background-color: #F19F3C;
+    color: white;
+
+    svg {
+        background-image: url(../../assets/ensolvers-logo.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.sidebar {
+    width: 5rem;
+    border: none; outline: none;
+    background-color: hsl(0, 0%, 15%);
+}
+
+.mat-drawer-container {
+    min-height: calc(100vh - 56px);
+    background-color: hsl(0, 0%, 95%);
+}
+
+.main-content {
+    padding: 1.5rem;
+    overflow-y: visible;
+}
+
+.principal {
+    height: 100%;
+    overflow-y: auto;
+
+    .mat-drawer-container { height: 100%; }
+}
+
+@media screen and (max-width: 35rem) {
+    .sidebar {
+        display: none;
+    }
+}

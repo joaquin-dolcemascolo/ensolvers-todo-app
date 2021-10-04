@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 { align-self: flex-start; }
+
+    form {
+        width: 100%;
+    }
+
+    .input {
+        cursor: text;
+        background-color: hsl(0, 0%, 90%);
+        padding: 0.5rem 1rem;
+        border-radius: .325rem;
+        margin: 1rem 0;
+        width: calc(100% - 2rem);
+        input { border: none; outline: none; width: 100%; background-color: transparent; }
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+    
+        button:first-of-type {
+            margin-right: .5rem;
+        }
+
+        button {
+            min-width: 7rem;
+        }
+    }
+}

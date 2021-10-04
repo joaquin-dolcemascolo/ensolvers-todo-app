@@ -1,0 +1,42 @@
+<div class="container flex">
+    <div class="navigation flex">
+        <button mat-icon-button [routerLink]="'/folders'">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h1 [routerLink]="'/folders'" style="cursor: pointer;">Folders</h1>
+        <h1>></h1>
+        <h2> {{ folderTitle }} </h2>
+    </div>
+
+    <div class="toolbar flex">
+        <div class="search flex" (click)="searchInput.focus()">
+            <input #searchInput ([ngModel])="search">
+            <mat-icon>search</mat-icon>
+        </div>
+        <button mat-fab color="primary" (click)="add()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <div class="list" *ngFor="let itemList of itemLists">
+        <div class="list-title flex">
+            <h2> {{ itemList.title }} </h2>
+            <button mat-icon-button>
+                <mat-icon>expand_less</mat-icon>
+            </button>
+        </div>
+
+        <mat-card class="item flex" *ngFor="let item of itemList.items">
+            <mat-checkbox [(ngModel)]="item.checked" (change)="checkItem(item)"></mat-checkbox>
+            <p> {{ item.content }} </p>
+            <div class="buttons">
+                <button mat-icon-button (click)="edit(item.content)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="delete(item.id)">
+                    <mat-icon color="warn">delete</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

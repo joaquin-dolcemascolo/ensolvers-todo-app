@@ -1,0 +1,29 @@
+<h1>Welcome User!</h1>
+
+<div class="toolbar flex">
+    <div class="search flex" (click)="searchInput.focus()">
+        <input #searchInput ([ngModel])="search">
+        <mat-icon>search</mat-icon>
+    </div>
+    <button mat-fab color="primary" (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<h2>Your folders</h2>
+
+<div></div>
+
+<div class="folders">
+    <mat-card class="folder" *ngFor="let folder of records" [routerLink]="['/folder', folder.name.toLowerCase()]">
+        <h3> {{ folder.name }} </h3>
+        <div class="buttons">
+            <button mat-icon-button (click)="edit(folder, $event)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="delete(folder.id, $event)">
+                <mat-icon color="warn">delete</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h2> {{ title }} </h2>
+
+    <form [formGroup]="form">
+        <div class="input" (click)="contentInput.focus()">
+            <input #contentInput formControlName="content">
+        </div>
+    </form>
+
+    <div class="buttons">
+        <button mat-flat-button matDialogClose>Cancel</button>
+        <button mat-flat-button matDialogClose [mat-dialog-close]="form.value" color="primary"
+            [disabled]="form.invalid">Save</button>
+    </div>
+
+</div>

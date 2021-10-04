@@ -1,0 +1,17 @@
+<mat-toolbar class="toolbar">
+    <span>To-Do App</span>
+    <button mat-icon-button style="margin-left: auto;" [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="sidebar"></mat-drawer>
+    <mat-drawer-content class="main-content">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<mat-menu #menu="matMenu">
+    <app-account-menu></app-account-menu>
+</mat-menu>

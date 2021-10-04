@@ -1,0 +1,91 @@
+.list {
+    &:not(:last-of-type) { margin-bottom: 2rem; }
+    
+    .list-title {
+        margin-bottom: .5rem;
+    }
+
+    &:last-of-type .item {
+        text-decoration: line-through;
+        background-color: hsl(0, 0%, 85%);
+    }
+}
+
+.search {
+    cursor: text;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    input { border: none; outline: none; width: 100%; }
+    width: 100%;
+    margin-right: 1rem;
+    &:hover {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+}
+
+.toolbar {
+    width: clamp(15rem, 100%, 50rem);
+    margin: 1rem 0;
+}
+
+.container {
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    width: 18rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+
+    h2 {
+        text-transform: capitalize;
+    }
+}
+
+.mat-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: clamp(15rem, 80vw, 80rem);
+    height: auto;
+
+    padding: 0.5rem;
+    transition: all .3s;
+
+    .mat-checkbox {
+        margin: 0 1rem 0 0.5rem;
+    }
+
+    &:not(:last-of-type) { margin-bottom: 1rem; }
+
+    &:hover {
+        transform: scale(1.009);
+    }
+
+    p {
+        max-width: 100%;
+        flex-wrap: wrap;
+        word-wrap: break-word;
+    }
+
+    .buttons {
+        display: flex;
+        margin-left: auto;
+
+        &:first-child {
+            margin-right: 1rem;
+        }
+
+        button:hover {
+            transition: .2s;
+            transform: scale(1.1);
+        }
+
+    }
+}
